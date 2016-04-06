@@ -1,0 +1,34 @@
+name: VotePro
+author: Primus
+version: 1.0.0
+main: votepro\VotePro
+api: 2.0.0
+
+commands:
+ vote:
+  permission: votepro.command.vote
+  default: true
+
+permissions:
+ votepro.*:
+  default: false
+  children:
+   votepro.command.*:
+    default: false
+    children:
+     votepro.command.vote:
+      default: true
+   votepro.auto.*:
+    default: false
+    children:
+     votepro.auto.check:
+      default: true
+     votepro.auto.reward:
+      default: true
+   votepro.auto.notify.*:
+    default: true
+    children:
+     votepro.auto.notify.reward:
+      default: true
+     votepro.auto.notify.voted:
+      default: true
